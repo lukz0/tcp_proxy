@@ -8,5 +8,3 @@ edition = "2021"
 [dependencies]
 tokio = { version = "1.17.0", features = ["full"] }
 tokio-stream = "0.1.10"
-dialoguer = "0.10.2"
-pancurses = { version = "0.17", features=["win32"] }

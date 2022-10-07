@@ -4,17 +4,11 @@ use std::error::Error;
 use std::net::Ipv4Addr;
 use std::net::SocketAddr;
 use std::net::ToSocketAddrs;
-use std::path::PrefixComponent;
 use tokio::sync::mpsc;
 use tokio::sync::oneshot;
-use dialoguer;
 use std::net::IpAddr;
 use tokio::io::AsyncBufReadExt;
 use tokio::io::AsyncWriteExt;
-use std::iter;
-
-//extern crate pancurses;
-use pancurses;
 
 async fn async_io_thread(tx: mpsc::Sender<Command>, mut rx: mpsc::Receiver<ConsoleCommand>) -> Result<(), Box<dyn Error>> {
     let stdin = tokio::io::stdin();
